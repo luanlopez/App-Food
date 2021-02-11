@@ -6,6 +6,6 @@ routes.get('/test', (request, response) => response.json({
   message: "Luan pilantra",
   ehGay: true
 }
-))
+).status(200))
 
 module.exports = routes

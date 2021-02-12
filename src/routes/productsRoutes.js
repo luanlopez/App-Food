@@ -1,7 +1,8 @@
+const ProductController = require('../controllers/product.controller')
+
 module.exports = (router) => {
-  router.get('/products');
-  router.post('/products');
-  router.patch('/users/:product_id');
-  router.get('/users/:user_id');
-  router.delete('/users/:user_id');
+  router.get('/products', ProductController.getProducts);
+  router.post('/products', ProductController.createProduct);
+  router.get('/products/:id', ProductController.getProductById);
+  router.delete('/products/:id', ProductController.deleteProduct);
 };

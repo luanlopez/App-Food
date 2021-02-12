@@ -1,21 +1,17 @@
-const {
-    Router
-} = require('express');
+const { Router } = require('express');
 
 const productsRoute = require('./productsRoutes')
 
-
 class RouterLoader {
-    constructor() {
-        this.router = new Router();
-    }
+  constructor() {
+    this.router = new Router();
+  }
 
-    load(app) {
+  load(app) {
+    productsRoute(this.router)
 
-        productsRoute(this.router)
-
-        app.use(this.router)
-    }
+    app.use(this.router)
+  }
 
 }
 

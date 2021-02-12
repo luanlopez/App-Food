@@ -1,5 +1,5 @@
 const express = require('express')
-const routes = require('./routes/routes')
+const loaderRouter = require('./routes/routerLoaders')
 
 class App {
   constructor() {
@@ -13,7 +13,7 @@ class App {
   }
 
   routes() {
-    this.server.use(routes)
+    loaderRouter.load(this.server);
   }
 }
 

@@ -1,23 +1,20 @@
 const mongoose = require('mongoose');
 
 class Database {
+  static connect() {
+    const urlConnection = process.env.DATABASE_URL;
 
-    static connect() {
+    Database.connection = mongoose.connect(urlConnection, {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+    });
 
-        const urlConnection = process.env.DATABASE_URL;
+    return Database.connection;
+  }
 
-        Database.connection = mongoose.connect(urlConnection, {
-            useNewUrlParser: true,
-            useUnifiedTopology: true
-        });
-
-        return Database.connection
-    }
-
-    // static get connection() {
-    // return Database.connection
-    // }
-
+  // static get connection() {
+  // return Database.connection
+  // }
 }
 
 module.exports = Database;

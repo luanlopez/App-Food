@@ -1,4 +1,4 @@
-const ProductController = require('../controllers/product.controller')
+const ProductController = require('../controllers/product.controller');
 
 module.exports = (router) => {
   router.get('/products', ProductController.getProducts);

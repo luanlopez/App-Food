@@ -26,9 +26,9 @@ class OrderController {
 
   async getOrderById(req, res) {
     try {
-      const { orderId } = req.params;
+      const { order_id } = req.params;
 
-      const getOrder = await OrderModel.findById(orderId);
+      const getOrder = await OrderModel.findById(order_id);
 
       return res.status(200).json({ getOrder });
     } catch (error) {
@@ -78,14 +78,16 @@ class OrderController {
         });
       }
 
-      const cancelOrder = await findOrder.updateOne({
-        ...findOrder,
-        status: 'CANCELED',
-      });
+      await OrderModel.updateOne(
+        { _id: orderId },
+        {
+          status: 'CANCELED',
+        }
+      );
 
       return res.status(200).json({
         message: 'Order canceled with successfuly!',
-        cancelOrder,
+        findOrder,
       });
     } catch (error) {
       return res.status(404).json({
@@ -105,11 +107,11 @@ class OrderController {
         return res.status(404).json({ error: 'Order not founded!' });
       }
 
-      const updateOrder = await findOrderById.updateOne({
+      await findOrderById.updateOne({
         ...req.body,
       });
 
-      return res.status(200).json({ order: updateOrder, updated: true });
+      return res.status(200).json({ order: findOrderById, updated: true });
     } catch (error) {
       return res.status(400).json({ error, updated: false });
     }

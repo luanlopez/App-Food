@@ -1,4 +1,7 @@
-const { Schema, model } = require('mongoose');
+const {
+  Schema,
+  model
+} = require('mongoose');
 
 const OrderSchema = new Schema({
   seller_id: {
@@ -27,7 +30,7 @@ const OrderSchema = new Schema({
     ],
   },
   shipping_address_code: {
-    type: Number,
+    type: String,
     required: true,
   },
   shipping_address: {
@@ -38,9 +41,9 @@ const OrderSchema = new Schema({
     type: String,
     required: true,
   },
-  shipping_address_refence: {
+  shipping_address_reference: {
     type: String,
-    required: true,
+    required: false,
   },
   createdAt: {
     type: Date,

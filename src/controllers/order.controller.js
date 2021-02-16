@@ -47,7 +47,7 @@ class OrderController {
         getOrdersByStore,
       });
     } catch (error) {
-      return res.status(404).json({ error, message: 'Without orders!' });
+      return res.status(404).json({ error, message: 'Without orders of Store!' });
     }
   }
 
@@ -62,7 +62,7 @@ class OrderController {
         getOrdersBySeller,
       });
     } catch (error) {
-      return res.status(404).json({ error, message: 'Without orders!' });
+      return res.status(404).json({ error, message: 'Without orders of Seller!' });
     }
   }
 

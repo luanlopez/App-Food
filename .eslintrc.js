@@ -14,6 +14,7 @@ module.exports = {
     sourceType: 'module',
   },
   rules: {
+    'no-useless-constructor': 'off',
     'no-console': 'off',
     'prettier/prettier': 'error',
     'class-methods-use-this': 'off',

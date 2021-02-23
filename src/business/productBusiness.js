@@ -1,36 +1,31 @@
-const BaseBusiness = require('./baseBusiness')
+// const BaseBusiness = require('./baseBusiness');
 
-class ProductBusiness extends BaseBusiness{
+// class ProductBusiness extends BaseBusiness {
+//   constructor() {
+//     super();
+//   }
 
-  constructor(){
-    super();
-  }
+//   async createProduct(params) {
+//     const payload = {
+//       id: params.id,
+//     };
 
-  async createProduct(params){
+//     const result = await this.db.mongodb.create(payload);
 
-    const payload = {
-      id: params.id
-    }
+//     /**
+//           seller_id: 12
+//           seller_name: 'Lojinha do Dogão',
+//           product_name: DOG completo
+//           price: 12.09
+//         */
 
-    const result = await this.db.mongodb.create(payload);
+//     // get no mysql -> getStore( seller_id, store_id)
+//     // get no mysql -> getSeller( seller_id, store_id)
 
+//     // dt-product ( seller_id, store_id, price, product_name)
 
-            /**
-          seller_id: 12
-          seller_name: 'Lojinha do Dogão',
-          product_name: DOG completo
-          price: 12.09
-        */
+//     // SaveProducts( {seller_id, } )  -> mongodb
+//   }
+// }
 
-        //get no mysql -> getStore( seller_id, store_id)
-        //get no mysql -> getSeller( seller_id, store_id)
-
-        //dt-product ( seller_id, store_id, price, product_name)
-
-        //SaveProducts( {seller_id, } )  -> mongodb
-  }
-
-
-}
-
-module.exports = ProductBusiness;
+// module.exports = ProductBusiness;

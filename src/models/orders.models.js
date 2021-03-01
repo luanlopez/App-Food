@@ -1,7 +1,4 @@
-const {
-  Schema,
-  model
-} = require('mongoose');
+const { Schema, model } = require('mongoose');
 
 const OrderSchema = new Schema({
   seller_id: {

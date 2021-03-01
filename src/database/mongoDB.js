@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 class Database {
   static connect() {
-    const urlConnection = process.env.DATABASE_URL;
+    const urlConnection = process.env.DB_MONGO_URL;
 
     Database.connection = mongoose.connect(urlConnection, {
       useNewUrlParser: true,

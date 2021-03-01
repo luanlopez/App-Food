@@ -14,13 +14,13 @@ module.exports = {
     sourceType: 'module',
   },
   rules: {
-    'no-useless-constructor': 'off',
-    'no-console': 'off',
     'prettier/prettier': 'error',
     'class-methods-use-this': 'off',
     'no-param-reassign': 'off',
     camelcase: 'off',
     'no-underscore-dangle': 'off',
     'no-unused-vars': ['error', { argsIgnorePattern: 'next' }],
+    'import/no-dynamic-require': 0,
+    'global-require': 0,
   },
 };
